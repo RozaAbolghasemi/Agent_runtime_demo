@@ -150,3 +150,7 @@ def task_status(task_id: str):
     if not st:
         raise HTTPException(status_code=404, detail="Task not found")
     return st
+    
+@app.get("/")
+def root():
+    return {"ok": True, "hint": "Try /capabilities or /docs"}
